@@ -1,0 +1,21 @@
+#ifndef CC2500_STROBE_H
+#define CC2500_STROBE_H
+
+// CC2500 command strobes
+#define CC2500_STROBE_SRES      0x30
+#define CC2500_STROBE_SFSTXON   0x31
+#define CC2500_STROBE_SXOFF     0x32
+#define CC2500_STROBE_SCAL      0x33
+#define CC2500_STROBE_SRX       0x34
+#define CC2500_STROBE_STX       0x35
+#define CC2500_STROBE_SIDLE     0x36
+// 0x37 reserved.
+#define CC2500_STROBE_SWOR      0x38
+#define CC2500_STROBE_SPWD      0x39
+#define CC2500_STROBE_SFRX      0x3A
+#define CC2500_STROBE_SFTX      0x3B
+#define CC2500_STROBE_SWORRST   0x3C
+#define CC2500_STROBE_SNOP      0x3D
+
+
+#endif // CC2500_STROBE_H

@@ -1,0 +1,52 @@
+menu "CC2500 Configuration"    
+	config SCLK_GPIO
+		int "CC2500 SCLK GPIO"
+		help
+			Pin Number to be used as the SCLK SPI signal.
+
+	config MOSI_GPIO
+		int "CC2500 MOSI GPIO"
+		help
+			Pin Number to be used as the MOSI SPI signal.
+
+	config MISO_GPIO
+		int "CC2500 MISO GPIO"
+		help
+			Pin Number to be used as the MISO SPI signal.
+	
+	config CSN_GPIO
+		int "CC2500 CSN GPIO"
+		help
+			Pin Number to be used as the CSN SPI signal.
+
+	choice SPI_HOST
+		prompt "SPI peripheral that controls this bus"
+		default SPI2_HOST
+		help
+			Select SPI peripheral that controls this bus.
+		config SPI2_HOST
+			bool "SPI2_HOST"
+			help
+				Use SPI2_HOST. This is also called HSPI_HOST.
+		config SPI3_HOST
+			bool "SPI3_HOST"
+			help
+				USE SPI3_HOST. This is also called VSPI_HOST
+	endchoice
+
+	config CC2500_CHANNEL
+		int "CC2500 channel"
+		range 0 255
+		default 0
+		help
+			Both receiver and transmitter must operate on the same channel
+	
+	config CC2500_CLOCK
+		int "CC2500 clock frequency (Hz)"
+		range 1 10000000
+		default 10000000
+		help
+			Clock frequency for the SPI communication with the CC2500.
+
+
+    endmenu
